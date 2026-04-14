@@ -40,7 +40,14 @@
 			]
 		},
 		"spacing": {
-			"units": ["px", "em", "rem", "%", "vh", "vw"]
+			"units": ["px", "em", "rem", "%", "vh", "vw"],
+			"spacingScale": {
+				"operator": "*",
+				"increment": 1.5,
+				"steps": 7,
+				"mediumStep": 1.5,
+				"unit": "rem"
+			}
 		}
 	},
 	"styles": {
