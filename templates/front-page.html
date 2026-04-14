@@ -1,0 +1,65 @@
+<!--
+@vibe-file: templates/front-page.html
+@purpose: Site front page — shown on the home URL when the reading setting is "latest posts" or a static page. Displays a full-width hero with the site title, tagline and a CTA, followed by the latest posts loop.
+@safe-to-edit:
+  - hero title, tagline, button text/link
+  - gradient slug (defined in theme.json → settings.color.gradients)
+  - number of posts shown below the hero
+@do-not-touch:
+  - the wp:template-part wrappers for header and footer
+  - the wp:query block structure (WP injects real posts into it)
+@prompt-examples:
+  - "Change the hero gradient to a sunset orange"
+  - "Add a second CTA button next to the first"
+  - "Show 3 featured posts in a grid below the hero instead of 6 in a list"
+-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:cover {"useFeaturedImage":false,"dimRatio":100,"customOverlayColor":"#228B22","customGradient":"linear-gradient(135deg,#0f5132 0%,#228B22 50%,#4ade80 100%)","minHeight":70,"minHeightUnit":"vh","contentPosition":"center center","isDark":false,"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|40","right":"var:preset|spacing|40"}}}} -->
+<div class="wp-block-cover alignfull is-light" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--40);min-height:70vh">
+	<span aria-hidden="true" class="wp-block-cover__background has-background-dim has-background-gradient" style="background:linear-gradient(135deg,#0f5132 0%,#228B22 50%,#4ade80 100%)"></span>
+	<div class="wp-block-cover__inner-container">
+		<!-- wp:group {"layout":{"type":"constrained","contentSize":"800px"}} -->
+		<div class="wp-block-group">
+			<!-- wp:site-title {"level":1,"textAlign":"center","style":{"typography":{"fontSize":"clamp(2.5rem, 6vw, 5rem)","fontWeight":"800","letterSpacing":"-0.03em"},"color":{"text":"#ffffff"}}} /-->
+
+			<!-- wp:site-tagline {"textAlign":"center","style":{"typography":{"fontSize":"1.25rem","fontStyle":"italic"},"color":{"text":"#f0fdf4"},"spacing":{"margin":{"top":"1rem"}}}} /-->
+
+			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"center"},"style":{"spacing":{"margin":{"top":"2.5rem"}}}} -->
+			<div class="wp-block-buttons" style="margin-top:2.5rem">
+				<!-- wp:button {"backgroundColor":"background","textColor":"primary-dark","style":{"border":{"radius":"999px"},"typography":{"fontWeight":"600"},"spacing":{"padding":{"top":"0.9rem","bottom":"0.9rem","left":"2rem","right":"2rem"}}}} -->
+				<div class="wp-block-button"><a class="wp-block-button__link has-primary-dark-color has-background-background-color has-text-color has-background wp-element-button" style="border-radius:999px;padding-top:0.9rem;padding-right:2rem;padding-bottom:0.9rem;padding-left:2rem;font-weight:600" href="#latest-posts">Read the blog</a></div>
+				<!-- /wp:button -->
+			</div>
+			<!-- /wp:buttons -->
+		</div>
+		<!-- /wp:group -->
+	</div>
+</div>
+<!-- /wp:cover -->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50"}}}} -->
+<main class="wp-block-group" id="latest-posts" style="padding-top:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50)">
+	<!-- wp:heading {"level":2,"textAlign":"center"} -->
+	<h2 class="wp-block-heading has-text-align-center">Latest posts</h2>
+	<!-- /wp:heading -->
+
+	<!-- wp:query {"queryId":0,"query":{"perPage":6,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":false}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template -->
+			<!-- wp:post-title {"isLink":true,"level":3} /-->
+			<!-- wp:post-date /-->
+			<!-- wp:post-excerpt /-->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph -->
+			<p>No posts yet.</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+	</div>
+	<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
