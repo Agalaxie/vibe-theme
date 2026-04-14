@@ -1,0 +1,29 @@
+<!--
+@vibe-file: templates/404.html
+@purpose: 404 Not Found template — shown when a visitor hits a URL that doesn't match any post or page.
+@safe-to-edit:
+  - the headline and message text
+  - add a search block or a link back to the home page
+  - styling of the error block
+@do-not-touch:
+  - the wp:template-part wrappers for header/footer
+@prompt-examples:
+  - "Add a search block to the 404 page"
+  - "Change the message to something friendlier"
+  - "Add a link back to the homepage"
+-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"4rem","bottom":"4rem"}}}} -->
+<main class="wp-block-group" style="padding-top:4rem;padding-bottom:4rem">
+	<!-- wp:heading {"level":1,"textAlign":"center"} -->
+	<h1 class="wp-block-heading has-text-align-center">404 — Not Found</h1>
+	<!-- /wp:heading -->
+
+	<!-- wp:paragraph {"align":"center"} -->
+	<p class="has-text-align-center">The page you're looking for doesn't exist.</p>
+	<!-- /wp:paragraph -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

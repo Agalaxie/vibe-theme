@@ -1,0 +1,26 @@
+<!--
+@vibe-file: parts/header.html
+@purpose: Site header — site title/logo and primary navigation, rendered at the top of every page.
+@safe-to-edit:
+  - site title text and styling
+  - navigation menu items
+  - header background color (prefer theme.json globals)
+  - add/remove a search block
+@do-not-touch:
+  - the wp:site-title block (WordPress needs it for SEO and the admin bar)
+  - the wp:navigation block name (replacing it with raw links breaks the WP menu editor)
+@prompt-examples:
+  - "Add a search icon to the right of the nav"
+  - "Make the header sticky on scroll"
+  - "Replace site title with a logo image"
+-->
+<!-- wp:group {"tagName":"header","align":"full","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"1rem","bottom":"1rem"}}}} -->
+<header class="wp-block-group alignfull" style="padding-top:1rem;padding-bottom:1rem">
+	<!-- wp:group {"layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
+	<div class="wp-block-group">
+		<!-- wp:site-title {"level":0} /-->
+		<!-- wp:navigation {"layout":{"type":"flex","justifyContent":"right"}} /-->
+	</div>
+	<!-- /wp:group -->
+</header>
+<!-- /wp:group -->

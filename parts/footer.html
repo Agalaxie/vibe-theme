@@ -1,0 +1,21 @@
+<!--
+@vibe-file: parts/footer.html
+@purpose: Site footer — copyright line and "powered by" credit, rendered at the bottom of every page.
+@safe-to-edit:
+  - copyright text
+  - add social links, newsletter signup, or columns
+  - footer background color (prefer theme.json)
+@do-not-touch:
+  - the wp:group wrapper with tagName="footer" (semantic HTML requirement)
+@prompt-examples:
+  - "Add three columns to the footer with About, Links, and Social"
+  - "Replace 'powered by WordPress' with my company name"
+  - "Add a newsletter signup block"
+-->
+<!-- wp:group {"tagName":"footer","align":"full","layout":{"type":"constrained"},"style":{"spacing":{"padding":{"top":"2rem","bottom":"2rem"},"margin":{"top":"4rem"}}},"backgroundColor":"muted"} -->
+<footer class="wp-block-group alignfull has-muted-background-color has-background" style="margin-top:4rem;padding-top:2rem;padding-bottom:2rem">
+	<!-- wp:paragraph {"align":"center","fontSize":"sm"} -->
+	<p class="has-text-align-center has-small-font-size">© <!-- wp:site-title {"level":0} /--> — Built with vibe-theme.</p>
+	<!-- /wp:paragraph -->
+</footer>
+<!-- /wp:group -->

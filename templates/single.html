@@ -1,0 +1,26 @@
+<!--
+@vibe-file: templates/single.html
+@purpose: Single post template — renders one blog post with title, date, featured image, and content.
+@safe-to-edit:
+  - layout of post metadata (date, author, categories)
+  - add/remove a featured image block
+  - add comments, related posts, author box
+@do-not-touch:
+  - the wp:post-content block (WP injects the actual post body here — don't replace with static text)
+  - the wp:template-part wrappers for header/footer
+@prompt-examples:
+  - "Add an author bio box below the post content"
+  - "Show categories and tags under the post title"
+  - "Add a featured image at the top"
+-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+	<!-- wp:post-title {"level":1} /-->
+	<!-- wp:post-date /-->
+	<!-- wp:post-content /-->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

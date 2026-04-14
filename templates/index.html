@@ -1,0 +1,44 @@
+<!--
+@vibe-file: templates/index.html
+@purpose: Blog home / index — lists recent posts using the WP Query Loop block. This template is used whenever WP can't find a more specific template.
+@safe-to-edit:
+  - query arguments (posts per page, order, etc.)
+  - layout of each post preview inside the loop
+  - add a page header/hero above the loop
+@do-not-touch:
+  - the wp:template-part wrappers for header and footer (they pull in parts/)
+  - the wp:query block wrapping the loop (WP uses it to inject real posts)
+@prompt-examples:
+  - "Show 6 posts per page instead of 10"
+  - "Add a big hero section above the post list"
+  - "Display posts in a 2-column grid"
+-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+	<!-- wp:query {"queryId":0,"query":{"perPage":10,"pages":0,"offset":0,"postType":"post","order":"desc","orderBy":"date","inherit":true}} -->
+	<div class="wp-block-query">
+		<!-- wp:post-template -->
+			<!-- wp:post-title {"isLink":true,"level":2} /-->
+			<!-- wp:post-date /-->
+			<!-- wp:post-excerpt /-->
+		<!-- /wp:post-template -->
+
+		<!-- wp:query-pagination -->
+			<!-- wp:query-pagination-previous /-->
+			<!-- wp:query-pagination-numbers /-->
+			<!-- wp:query-pagination-next /-->
+		<!-- /wp:query-pagination -->
+
+		<!-- wp:query-no-results -->
+			<!-- wp:paragraph -->
+			<p>No posts yet.</p>
+			<!-- /wp:paragraph -->
+		<!-- /wp:query-no-results -->
+	</div>
+	<!-- /wp:query -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->

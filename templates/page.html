@@ -1,0 +1,23 @@
+<!--
+@vibe-file: templates/page.html
+@purpose: Single page template — renders a WordPress Page (not a blog post). Simpler than single.html because pages usually don't have dates/categories.
+@safe-to-edit:
+  - page layout and wrapper styles
+  - add a page header/hero block
+@do-not-touch:
+  - the wp:post-content block (WP injects the page body here)
+  - the wp:template-part wrappers for header/footer
+@prompt-examples:
+  - "Add a big hero banner at the top of every page"
+  - "Make pages full-width instead of constrained"
+-->
+<!-- wp:template-part {"slug":"header","tagName":"header"} /-->
+
+<!-- wp:group {"tagName":"main","layout":{"type":"constrained"}} -->
+<main class="wp-block-group">
+	<!-- wp:post-title {"level":1} /-->
+	<!-- wp:post-content /-->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer"} /-->
