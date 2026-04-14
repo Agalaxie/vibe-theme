@@ -1,0 +1,28 @@
+/*
+Theme Name: vibe-theme
+Theme URI: https://github.com/Agalaxie/vibe-theme
+Author: Stephane Dumazert
+Author URI: https://github.com/Agalaxie
+Description: The first WordPress block theme designed to be modified by AI. Built for devs who vibe-code with Claude, Cursor, or the WordPress MCP server. Every file is documented for an LLM audience.
+Version: 0.1.0
+Requires at least: 6.5
+Tested up to: 6.5
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: vibe-theme
+Tags: block-theme, full-site-editing, blog, one-column, ai-friendly
+*/
+
+/*
+ * @vibe-file: style.css
+ * @purpose: WordPress theme header (required by WP to register the theme). All actual styling lives in theme.json — do NOT add CSS rules here.
+ * @safe-to-edit:
+ *   - Theme Name, Author, Description, Version, Tags in the header block above
+ * @do-not-touch:
+ *   - The header comment format (WP parses it — breaking syntax breaks the theme)
+ *   - Do not add CSS rules below this comment (vibe-theme philosophy: all styling goes through theme.json)
+ * @prompt-examples:
+ *   - "Bump the theme version to 0.2.0"
+ *   - "Update the theme description"
+ */
